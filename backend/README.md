@@ -1,2 +1,2 @@
-docker build -t backend .
+docker build -t backend .  
 docker run -it -p 8080:8080 --rm backend
