@@ -1,0 +1,16 @@
+swagger: "2.0"
+info:
+  description: "Backend API specification for PROGRI BI system"
+  version: "0.1"
+  title: "Progri BI"
+  contact:
+    email: "earlyr@yandex.ru"
+host: "localhost"
+basePath: "/api"
+paths:
+  /echo:
+    get:
+      summary: "Check if server is alive"
+      responses:
+        "200": 
+          description: "Alive"
