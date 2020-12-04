@@ -1,5 +1,5 @@
 ## While launching server for the first time: 
-1. Install Node
+1. Install Node and NPM (visit https://nodejs.org/en/download/package-manager/ )
 2. Download Dependencies by running `npm i` or `npm install`
 3. Start server by running `node server.js` or `npm start server`
 
