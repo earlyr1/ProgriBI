@@ -6,7 +6,8 @@ async def handle(request):
     return web.Response(text=text)
 
 app = web.Application()
-app.add_routes([web.get('/echo/{name}', handle)])
+app.add_routes([web.get('/api/echo/{name}', handle), 
+                web.get('/api/echo/', handle)])
 
 if __name__ == '__main__':
-    web.run_app(app)
+    web.run_app(app, port=5000)
