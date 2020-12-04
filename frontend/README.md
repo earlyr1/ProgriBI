@@ -15,6 +15,6 @@ Entry point for the server, then with Express it will launch web server and resp
 Just a simple web-structure, including styles, js and index.html
 
 
-##Docker image build:  
+## Docker image build:  
 `docker build -t frontend .`  
 Run: `docker run -it -p 8080:4000 --rm frontend`
