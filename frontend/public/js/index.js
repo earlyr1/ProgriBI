@@ -50,8 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const handleFile = (file) => {
   let formData = new FormData();
   if (file) {
-    formData.append('file', file);
+    formData.append('file', file[0]);
+  } else {
+    const fileupload = document.getElementById('fileupload');
+    formData.append('file', fileupload.files[0]);
   }
+
   fetch('/api/tables', {
     method: 'POST',
     body: formData
