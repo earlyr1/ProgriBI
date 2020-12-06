@@ -40,6 +40,6 @@ paths:
         - multipart/form-data
       parameters:
         - in: formData
-          name: upfile
+          name: fileupload
           type: file
           description: "A file to upload"
