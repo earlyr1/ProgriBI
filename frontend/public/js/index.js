@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const showLoading = () => {
+    file.disabled = true;
+    highlight();
     document.querySelector('.loader').style.display = 'block';
     document.querySelector('.box_dragndrop > svg').style.display = 'none';
     document.querySelector('.dragndrop_text').style.display = 'none';

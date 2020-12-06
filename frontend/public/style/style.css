@@ -89,7 +89,7 @@ header {
     height: 90%;
     border: 1px dotted black;
 }
-.box_dragndrop > div {
+.dragndrop_text {
     font-size: 10px;
     text-align: center;
     margin-top: 10%;
