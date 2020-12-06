@@ -7,6 +7,11 @@ info:
     email: "earlyr@yandex.ru"
 host: "localhost"
 basePath: "/api"
+
+tags:
+  - name: "tables"
+    description: "API related to operations with tables"
+
 paths:
   /echo:
     get:
@@ -14,3 +19,27 @@ paths:
       responses:
         "200": 
           description: "Alive"
+  /tables:
+    post:
+      summary: "Creates a new table"
+      responses:
+        "201":
+          description: "New table created"
+          schema: 
+            type: object
+            properties:
+              id:
+                type: integer
+                description: The table ID.
+        "400":
+          description: "Bad file for table"
+        "500":
+          description: "Server error"
+      operationId: "addTable"
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: formData
+          name: upfile
+          type: file
+          description: "A file to upload"

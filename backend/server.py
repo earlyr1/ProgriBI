@@ -1,13 +1,9 @@
 from aiohttp import web
 
-async def handle(request):
-    name = request.match_info.get('name', "Anonymous")
-    text = "Hello, " + name
-    return web.Response(text=text)
+from src.urls import echo
 
 app = web.Application()
-app.add_routes([web.get('/api/echo/{name}', handle), 
-                web.get('/api/echo/', handle)])
+app.add_routes([web.get('/api/echo/', echo)])
 
 if __name__ == '__main__':
     web.run_app(app, port=5000)
