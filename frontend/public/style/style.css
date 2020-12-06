@@ -43,7 +43,14 @@ header {
     color: dodgerblue;
     font-weight: 800;
     text-decoration: none;
-    border: 2px solid white;
+
+}
+
+.btn[disabled] {
+    background-color: darkgray;
+}
+.btn:hover {
+    background-color: azure;
 }
 
 

@@ -67,8 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
       method: 'POST',
       body: formData
     })
-      .then(res => console.log(res))
+      .then(res => res.json()).then(res => console.log(res))
       .catch(err => console.log(err))
+
+    //if (res.redirected) { window.location.href = response.url }
   }
 
 });
