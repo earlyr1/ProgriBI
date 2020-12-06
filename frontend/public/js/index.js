@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     dropArea.addEventListener(eventName, unhighlight, false)
   });
 
+  dropArea.addEventListener('drop', dropBox.submit);
+
   function highlight(e) {
     console.log('dragenter');
     dropBox.classList.add('highlight');
@@ -91,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     dropBox.classList.remove('highlight');
     dropArea.classList.remove('highlight2');
   }
-
 
 });
 
