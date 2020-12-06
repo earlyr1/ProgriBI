@@ -1,26 +1,113 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+.size_wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.img_wrapper {
     height: 100vh;
+    width: 100vw;
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 5%;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.logo > img {
+    width: 150px;
+}
+.logo > span {
+    font-weight: 800;
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.btn {
+    padding: 10px 40px;
+    background-color: white;
+    border-radius: 25px;
+    display: inline-block;
+    color: dodgerblue;
+    font-weight: 800;
+    text-decoration: none;
+    border: 2px solid white;
 }
 
-button {
-    padding: 20px 50px;
-    background-color: transparent;
-    border: 2px solid rebeccapurple;
-    color: rebeccapurple;
+.intro_content {
+    padding: 10% 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-button:hover {
-    background-color: rebeccapurple;
+.intro_content_wrapper {
+    width: 40%;
     color: white;
-    animation: ease-in;
+}
+.intro_content_wrapper > h3 {
+    font-weight: 400;
+}
+
+.container
+{
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    margin: 0 auto;
+    background:red !important;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+}
+.box_dragndrop {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+    border: 1px dotted black;
+}
+.box_dragndrop > div {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10%;
+}
+.box:hover {
+    opacity: 1 !important;
+}
+.box_dragndrop:hover {
     cursor: pointer;
 }
-
-canvas {
-    display: none;
-    width: 80vw !important;
+#fileupload {
+    width: 0.1px;
+    height: 0.1px;
+    z-index: -1;
+    opacity: 0;
+}
+.highlight {
+    opacity: 1 !important;
+}
+.highlight2 {
+    border: 2px solid dodgerblue !important;
 }

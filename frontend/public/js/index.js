@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+  /*
   const button = document.querySelector('button');
   const canvas = document.querySelector('canvas');
 
@@ -48,6 +48,53 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
+  */
+
+
+
+  const file = document.getElementById('fileupload');
+
+  file.addEventListener('change', (e) => {
+    e.preventDefault();
+    dropBox.submit();
+
+  })
+
+
+  const dropArea = document.querySelector('.box_dragndrop');
+  const dropBox = document.querySelector('.box');
+
+  const preventDefaults = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false)
+  });
+
+  ['dragenter', 'dragover'].forEach(eventName => {
+    dropArea.addEventListener(eventName, highlight, false)
+  });
+
+  ['dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, unhighlight, false)
+  });
+
+  function highlight(e) {
+    console.log('dragenter');
+    dropBox.classList.add('highlight');
+    dropArea.classList.add('highlight2');
+  }
+
+  function unhighlight(e) {
+    dropBox.classList.remove('highlight');
+    dropArea.classList.remove('highlight2');
+  }
 
 
 });
+
+
+
+
