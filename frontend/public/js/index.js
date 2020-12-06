@@ -44,24 +44,33 @@ document.addEventListener('DOMContentLoaded', () => {
     dropArea.classList.remove('highlight2');
   }
 
+  const showLoading = () => {
+    document.querySelector('.loader').style.display = 'block';
+    document.querySelector('.box_dragndrop > svg').style.display = 'none';
+    document.querySelector('.dragndrop_text').style.display = 'none';
+  }
+
+  const handleFile = (file) => {
+    let formData = new FormData();
+    if (file) {
+      formData.append('file', file[0]);
+    } else {
+      const fileupload = document.getElementById('fileupload');
+      formData.append('file', fileupload.files[0]);
+    }
+
+    showLoading();
+
+    fetch('/api/tables', {
+      method: 'POST',
+      body: formData
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+
 });
 
 
-const handleFile = (file) => {
-  let formData = new FormData();
-  if (file) {
-    formData.append('file', file[0]);
-  } else {
-    const fileupload = document.getElementById('fileupload');
-    formData.append('file', fileupload.files[0]);
-  }
-
-  fetch('/api/tables', {
-    method: 'POST',
-    body: formData
-  })
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-}
 
 
