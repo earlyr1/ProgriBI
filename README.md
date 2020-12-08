@@ -13,6 +13,6 @@ What have done?
 
 ✔️ Docker build
 
-#Starting server via docker
+# Starting server via docker
 
 To build frontend and backend all together use `bash start.sh`
